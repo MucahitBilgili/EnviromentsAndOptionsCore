@@ -1,6 +1,6 @@
 ##### launchsettings.json
 
-  ```cs  
+  ```json  
   "Development": {
       "commandName": "IISExpress",
       "launchBrowser": true,
@@ -23,7 +23,7 @@
 
 ##### appsettings.Production.json
 
-  ```cs 
+  ```json 
   "CustomConfig": {
     "ConnectionString": "Server=localhost;Integrated Security=True;Database=Prod_DB;",
     "EmailSettings": {
@@ -36,7 +36,7 @@
   ```
 ##### appsettings.Development.json
 
-  ```cs 
+  ```json 
  "CustomConfig": {
     "ConnectionString": "Server=localhost;Integrated Security=True;Database=Dev_DB;",
     "EmailSettings": {
