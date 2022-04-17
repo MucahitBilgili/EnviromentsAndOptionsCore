@@ -71,6 +71,17 @@ public class CustomConfig
  ```cs 
 	builder.Services.Configure<CustomConfig>(builder.Configuration.GetSection(nameof(CustomConfig)));
 	builder.Services.AddOptions();
+	
+	//......
+	if (app.Environment.IsProduction())
+	{
+ 	  //prod app.use 
+   
+	}
+	if (app.Environment.IsDevelopment())
+	{
+	   //dev app.use 
+	}
   ```
   
  `ProductController.cs` 
