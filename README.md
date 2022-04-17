@@ -72,6 +72,27 @@ public class CustomConfig
 	builder.Services.Configure<CustomConfig>(builder.Configuration.GetSection(nameof(CustomConfig)));
 	builder.Services.AddOptions();
   ```
+  
+ `ProductController.cs` 
+ 
+  ```cs
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
+    {
+        private IOptions<CustomConfig> _options;
+        public ProductController(IOptions<CustomConfig> options)
+        {
+            _options = options;
+        }
+        [HttpPost]
+        public IActionResult GetProduct(Product product)
+        {
+            product.Name = "Product";
+            return Ok(product);
+        }
+    }
+  ```
 ## Result
 #### When working with Production environment
 ![prodconfig](https://user-images.githubusercontent.com/25562982/163707729-6d36be64-6a46-4b4c-b0b9-4ff38ee17fc7.png)
